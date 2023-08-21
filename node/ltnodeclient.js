@@ -1,16 +1,16 @@
-var net = require("net");
-var moduleCache = require("module")._cache;
-var vm = require("vm");
-var Module = require("module").Module;
-var fs = require("fs");
-var fpath = require("path");
-var util = require("util");
+let net = require("net");
+let moduleCache = require("module")._cache;
+let vm = require("vm");
+let Module = require("module").Module;
+let fs = require("fs");
+let fpath = require("path");
+let util = require("util");
 
-var sandboxes = {};
-var s = null;
+let sandboxes = {};
+let s = null;
 
-var connected = false;
-var currentModule = null;
+let connected = false;
+let currentModule = null;
 
 function connect(script, port, cid) {
   s = net.connect(port, "localhost");
